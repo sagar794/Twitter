@@ -2,7 +2,7 @@
 
 Tweeter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 3 hours spent in total (I got stuck and couldn't see my problem)
+Time spent: 4 hours spent in total (I got stuck and couldn't see my problem)
 
 ## User Stories
 
