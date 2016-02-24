@@ -1,23 +1,22 @@
- //
-//  LoginViewController.swift
+//
+//  TweeterNavigationController.swift
 //  Twitter
 //
-//  Created by Sagar  on 2/19/16.
+//  Created by Sagar  on 2/23/16.
 //  Copyright © 2016 Sagar . All rights reserved.
 //
 
 import UIKit
-import BDBOAuth1Manager
-class LoginViewController: UIViewController {
 
-    @IBOutlet weak var loginButton: UIButton!
-    
+class TweeterNavigationController: UINavigationController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        loginButton.layer.cornerRadius = 4
-        loginButton.clipsToBounds = true
+        
+        self.navigationBar.barTintColor = UIColor(red: 6/255.0, green: 170/255.0, blue: 147/225.0, alpha: 1.0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,20 +35,4 @@ class LoginViewController: UIViewController {
     }
     */
 
-    @IBAction func onLoginButton(sender: AnyObject) {
-        
-        TwitterClient.sharedInstance.login({ () -> () in
-            print("I've logged in!")
-            self.performSegueWithIdentifier("loginSegue", sender: nil)
-            }) { (error:NSError) -> () in
-            print("Error:\(error.localizedDescription)")
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-} /* CLASS BRACE */
+}

@@ -10,6 +10,7 @@ import UIKit
 
 class TweetCell: UITableViewCell {
 
+    @IBOutlet weak var tweetBubbleView: UIView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -30,7 +31,7 @@ class TweetCell: UITableViewCell {
             }
             likeLabel.text = "\(tweet.favorites_count)"
             retweetLabel.text = "\(tweet.retweetCount)"
-    
+            timeStampLabel.text = tweet.timestampString
         }
     }
     
@@ -54,6 +55,11 @@ class TweetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profileImage.layer.cornerRadius = 5
+        profileImage.clipsToBounds = true
+        tweetBubbleView.layer.cornerRadius = 15
+        tweetBubbleView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
